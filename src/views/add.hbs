@@ -1,0 +1,56 @@
+<div class = 'row'>
+    <div class = 'col-md-4'>
+        <div class = 'card bg-primary mb-3" style="max-width: 20rem;"'>
+                <div class = 'card-body'>
+                    <form action="/add" method = 'POST' enctype="multipart/form-data">
+                        <div class = 'form-group'>
+                            <input type = "text" name = 'title' class = 'form-control' placeholder="Titulo">
+                        </div>
+                        <div class = 'form-group'>
+                            <textarea name = 'description' class = 'form-control' placeholder="Descripcion de la imagen"></textarea>
+                        </div>
+                        <div class = 'form-group'>
+                            <select class="custom-select" name= 'categoria'>
+                                <option selected>Selecciona la categoria</option>
+                                <option value="momentos-felices">Momentos Felices</option>
+                                <option value="momentos-tristes">Momentos Tristes</option>
+                                <option value="chupas">Chupas</option>
+                                <option value="tonto-tick">Tonto tick</option>
+                            </select>
+                        </div>
+                        <div class = 'input-group mb-3'>
+                            <div class = 'custom-file'>
+                                <input name = 'image' type = 'file' class= 'custom-file-input' id= 'inputGroupFile01'>
+                                <labe for= 'inputGroupFile01' class = 'custom-file-label' > Escoge una Imagen</labe> 
+                            </div>
+                        </div>
+                        <button class = 'btn btn-danger'> Sube Tu Foto</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+    <div class = 'col-md-8'>
+        <table class = 'table table-hover table-primary'>
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Descipcion</th>
+                    <th>Operaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each photos}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>
+                            <a href='{{imageUrl}}' target = '_blank' class = 'btn btn-danger' >Ver</a>
+                            <a href='add/delete/{{_id}}' class= 'btn btn-danger' >Borrar</a>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+</div>
