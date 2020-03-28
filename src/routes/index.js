@@ -44,7 +44,7 @@ router.get('/momentos-tristes', async(req, res) => {
     res.render('momentos-tristes', {photos});
 });
 router.get('/tonto', async(req, res) => {
-    const photos = await Photo.find({categoria:'tonto'}).sort({'_id':-1});
+    const photos = await Photo.find({categoria:'tonto-tick'}).sort({'_id':-1});
     res.render('tonto-tick', {photos});
 });
 router.get('/chupas', async(req, res) => {

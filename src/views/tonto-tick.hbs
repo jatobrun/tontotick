@@ -1,3 +1,16 @@
-<div class = 'container'>
-<h1>Tonto Tick</h1>
+<div class = 'container p-4'>
+    <div class = 'row'>
+        <div class = 'card-columns'>
+            {{#each photos}}
+                <div class = 'card'>
+                    <img src='{{imageUrl}}' class ='card-img-top'>
+                    <div class = 'card-body'>
+                        <h5 class = 'card-title'>{{title}}</h5>
+                        <p class = 'card-text'>{{description}}</p>
+                        <a href='{{imageUrl}}' target = '_blank' class = 'btn btn-danger' >Ver</a>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
 </div>
